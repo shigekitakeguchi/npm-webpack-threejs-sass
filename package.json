@@ -1,0 +1,26 @@
+{
+  "name": "npm-webpack-threejs-sass",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "three": "^0.76.1"
+  },
+  "devDependencies": {
+    "concurrently": "^2.1.0",
+    "lite-server": "^2.2.0",
+    "node-sass": "^3.7.0",
+    "nodemon": "^1.9.2",
+    "webpack": "^1.13.0"
+  },
+  "scripts": {
+    "webpack": "webpack -w",
+    "lite": "lite-server",
+    "build-css": "node-sass ./src/scss/style.scss ./app/styles/style.css --output-style compressed",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
+    "start": "concurrently \"npm run lite\" \"npm run webpack\" \"npm run watch-css\""
+  },
+  "keywords": [],
+  "author": "shigeki.takeguchi",
+  "license": "MIT"
+}
